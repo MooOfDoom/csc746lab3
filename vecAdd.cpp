@@ -7,7 +7,7 @@
 // function to add the elements of two arrays
 void add(int n, float *x, float *y)
 {
-	#pragma omp parallel for
+#pragma omp parallel for
 	for (int i = 0; i < n; i++)
 		y[i] = x[i] + y[i];
 }
