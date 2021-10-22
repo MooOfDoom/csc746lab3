@@ -7,8 +7,13 @@
 // function to add the elements of two arrays
 void add(int n, float *x, float *y)
 {
-	for (int i = 0; i < n; i++)
-		y[i] = x[i] + y[i];
+#pragma omp target data map(to:x[0:n], n) map(tofrom:y[0:n])
+	{
+#pragma omp target teams distribute parallel for
+		for (int i = 0; i < n; i++)
+			y[i] = x[i] + y[i];
+	}// end pragma omp target data map
+	
 }
 
 int main(void)
