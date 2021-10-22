@@ -13,8 +13,8 @@ void add(int n, float *x, float *y)
 
 int main(void)
 {
-	// int N = 1<<20; // 1M elements
-	int N = 1<<23; // 8M elements
+	int N = 1<<20; // 1M elements
+	// int N = 1<<23; // 8M elements
 	// int N = 1<<30; // 1G elements
 	
 	std::cout << "Doing vector addition of " << N << " elements." << std::endl;
